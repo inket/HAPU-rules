@@ -1,0 +1,6 @@
+AdultSwim:
+ domain: "adultswim.com"
+ url: adultswim.com/videos/.+?/.+
+ anime: strSubSectionName
+ episode: >
+  $("a[href='"+document.location.pathname+"'] .as-episode-identifier").html().replace(/[^0-9]/g, "");

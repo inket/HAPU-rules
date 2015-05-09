@@ -1,0 +1,34 @@
+MPlayerX:
+ identifier: org.niltsh.MPlayerX
+ process:
+  - mplayer
+  - mplayer2
+MPlayer OSX Extended:
+ identifier: hu.mplayerhq.mplayerosx.extended
+ process:
+  - mplayer
+  - mplayer2
+VLC:
+ identifier: org.videolan.vlc
+ osascript: >
+  tell application "VLC" to path of current item
+QuickTime Player:
+ identifier: com.apple.QuickTimePlayerX
+mpv:
+ identifier: io.mpv
+ daemon: Yes
+SPlayerX:
+ identifier: org.splayer.splayerx
+ process: mplayer-mt
+Movist:
+ identifier: com.movist.Movist
+Squire:
+ identifier: Sylion.Squire
+Kodi:
+ identifier: org.xbmc.kodi
+Plex Home Theater:
+ identifier: com.plexapp.plexhometheater
+Plex Media Server:
+ identifier: com.plexapp.plexmediaserver
+ process: Plex New Transcoder
+ ignore_if: (.jpg$)|(.*/bif/progress.*)
