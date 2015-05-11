@@ -4,3 +4,12 @@ AdultSwim:
  anime: strSubSectionName
  episode: >
   $("a[href='"+document.location.pathname+"'] .as-episode-identifier").html().replace(/[^0-9]/g, "");
+Anime Haven:
+ domain: "animehaven.org"
+ url: animehaven.org/(subbed|dubbed)/.+
+ anime: >
+  if(document.title.indexOf(" (Season") > -1){document.title.substring(0, document.title.indexOf("(Season"))}else if(document.title.indexOf(" – Episode") > -1){document.title.substring(0, document.title.indexOf(" – Episode"))}else{document.title.substring(0, document.title.indexOf(" - Episode"))}
+ episode: >
+  document.title.substring(document.title.indexOf("Episode"), document.title.indexOf(" |")).replace("Episode ", "");
+ season: >
+  document.title.substring(document.title.indexOf("(Season"), document.title.lastIndexOf(") ")).replace("(Season ", "");
