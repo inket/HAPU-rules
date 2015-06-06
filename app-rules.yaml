@@ -11,7 +11,7 @@ MPlayer OSX Extended:
 VLC:
  identifier: org.videolan.vlc
  osascript: >
-  tell application "VLC" to path of current item
+  tell application "VLC" to name of current item
 QuickTime Player:
  identifier: com.apple.QuickTimePlayerX
 mpv:
