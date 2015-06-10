@@ -11,7 +11,28 @@ MPlayer OSX Extended:
 VLC:
  identifier: org.videolan.vlc
  osascript: >
-  tell application "VLC" to path of current item
+  tell application "VLC"
+    set filePath to (path of current item as text)
+    set fileName to (name of current item as text)
+
+    tell application "System Events"
+      set filePathInvalid to (filePath = "" or filePath = "/" or not (exists file filePath))
+      set fileNameInvalid to (fileName = "")
+
+      if fileNameInvalid then
+        -- File name/title invalid; No choice but to return the file path
+        return filePath
+      end if
+
+      if not filePathInvalid then
+        -- File is local; Returning the local path is preferred
+        return filePath
+      else
+        -- File is remote and has a title; Probably more meaningful than path
+        return fileName
+      end if
+    end tell
+  end tell
 QuickTime Player:
  identifier: com.apple.QuickTimePlayerX
 mpv:
