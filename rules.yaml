@@ -13,3 +13,12 @@ Anime Haven:
   document.title.substring(document.title.indexOf("Episode"), document.title.indexOf(" |")).replace("Episode ", "");
  season: >
   document.title.substring(document.title.indexOf("(Season"), document.title.lastIndexOf(") ")).replace("(Season ", "");
+MoeTube:
+ domain: "moetube.net"
+ url: moetube.net/watch/.+
+ anime: >
+  document.title.substring(0, document.title.indexOf(" - Episode"));
+ episode: >
+  document.title.substring(document.title.indexOf("Episode"), document.title.indexOf(" |")).replace("Episode ", "");
+ season: >
+  if(!isNaN(document.title.charAt(document.title.indexOf("Season") - 3))){document.title.charAt(document.title.indexOf("Season") - 3)}else{document.title.charAt(document.title.indexOf("Season") + 7)}
