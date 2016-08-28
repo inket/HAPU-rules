@@ -53,3 +53,6 @@ Plex Media Server:
  identifier: com.plexapp.plexmediaserver
  process: Plex New Transcoder
  ignore_if: (.jpg$)|(.*/bif/progress.*)
+VLCX:
+ identifier: br.com.guilhermerambo.VLCX
+ process: VLCX
